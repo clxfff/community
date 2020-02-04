@@ -31,8 +31,9 @@ public class MailTests {
         Context context = new Context();
         context.setVariable("username", "萧桑榆");
         String content = templateEngine.process("/mail/demo", context);
+        mailClient.sendMail("clxfff@foxmail.com", "hc", "hi");
 
-        mailClient.sendMail("clxfff@foxmail.com", "Html", content);
+
         System.out.println(content);
     }
 }

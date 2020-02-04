@@ -2,6 +2,7 @@ package com.nowcoder.community.service;
 
 import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.User;
+import com.nowcoder.community.util.CommunityConstant;
 import com.nowcoder.community.util.CommunityUtils;
 import com.nowcoder.community.util.MailClient;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +22,7 @@ import java.util.Random;
  * @author clx
  */
 @Service
-public class UserService {
+public class UserService implements CommunityConstant {
 
     @Autowired
     private UserMapper userMapper;
@@ -68,7 +69,7 @@ public class UserService {
         // 验证证号是否存在
         User u = userMapper.selectByName(user.getUsername());
         if (u != null) {
-            map.put("userMsg", "该用户名已存在！");
+            map.put("usernameMsg", "该用户名已存在！");
             return map;
         }
 
@@ -100,5 +101,17 @@ public class UserService {
         System.out.println(content);
 
         return map;
+    }
+
+    public int activation(int userId, String code) {
+        User user = userMapper.selectById(userId);
+        if (user.getStatus() == 1) {
+            return ACTIVATION_REPEAT;
+        } else if (user.getActivationCode().equals(code)) {
+            userMapper.updateStatus(userId, 1);
+            return ACTIVATION_SUCCESS;
+        } else {
+            return ACTIVATION_FAILURE;
+        }
     }
 }
