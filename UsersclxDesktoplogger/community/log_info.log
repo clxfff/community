@@ -1,7 +1,0 @@
-2020-01-31 20:09:28,812 INFO [main] c.n.c.LoggerTests [StartupInfoLogger.java:55] Starting LoggerTests on DESKTOP-H4IDNA1 with PID 21440 (started by clx in C:\Users\clx\IdeaProjects\community)
-2020-01-31 20:09:28,815 INFO [main] c.n.c.LoggerTests [SpringApplication.java:651] No active profile set, falling back to default profiles: default
-2020-01-31 20:09:32,678 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
-2020-01-31 20:09:32,925 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
-2020-01-31 20:09:33,569 INFO [main] c.n.c.LoggerTests [StartupInfoLogger.java:61] Started LoggerTests in 5.591 seconds (JVM running for 7.341)
-2020-01-31 20:09:34,060 INFO [main] c.n.c.LoggerTests [LoggerTests.java:21] info-clx
-2020-01-31 20:09:34,083 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
