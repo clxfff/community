@@ -31,4 +31,27 @@ public interface DiscussPostMapper {
      * @return 查询帖子的数量
      */
     int selectDiscussPostRows(@Param("userId") int userId);
+
+    /**
+     * 发布帖子
+     * @param discussPost 帖子
+     * @return 改变的行数
+     */
+    int insertDiscussPost(DiscussPost discussPost);
+
+    /**
+     * 根据主键查询帖子
+     * @param id 主键
+     * @return 查询到的帖子
+     */
+    DiscussPost selectDiscussPostById(int id);
+
+    /**
+     * 更新评论的数量
+     * @param id 帖子Id
+     * @param commentCount 评论数量
+     * @return 改变的行数
+     */
+    int updateCommentCount(int id, int commentCount);
+
 }

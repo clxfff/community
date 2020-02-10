@@ -89,6 +89,7 @@ public class SensitiveFilter {
         StringBuilder stringBuilder = new StringBuilder();
 
         while (position < text.length()) {
+
             char c = text.charAt(position);
 
             // 跳过符号
