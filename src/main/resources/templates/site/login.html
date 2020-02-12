@@ -67,7 +67,7 @@
 					<div class="form-group row">
 						<label for="username" class="col-sm-2 col-form-label text-right">账号:</label>
 						<div class="col-sm-10">
-							<input type="text" th:class="|form-control ${usernameMsg != null ? 'is-invalid' : ''}|"
+							<input type="text" th:class="|form-control ${usernameMsg!=null?'is-invalid':''}|"
 								   th:value="${param.username}"
 								   id="username" name="username" placeholder="请输入您的账号!" required>
 							<div class="invalid-feedback" th:text="${usernameMsg}">
@@ -78,7 +78,7 @@
 					<div class="form-group row mt-4">
 						<label for="password" class="col-sm-2 col-form-label text-right">密码:</label>
 						<div class="col-sm-10">
-							<input type="password" th:class="|form-control ${passwordMsg != null ? 'is-invalid' : ''}|"
+							<input type="password" th:class="|form-control ${passwordMsg!=null?'is-invalid':''}|"
 								   th:value="${param.password}"
 								   id="password" name="password" placeholder="请输入您的密码!" required>
 							<div class="invalid-feedback" th:text="${passwordMsg}">
@@ -89,7 +89,7 @@
 					<div class="form-group row mt-4">
 						<label for="verifycode" class="col-sm-2 col-form-label text-right">验证码:</label>
 						<div class="col-sm-6">
-							<input type="text" th:class="|form-control ${codeMsg != null ? 'is-valid' : ''}|"
+							<input type="text" th:class="|form-control ${codeMsg!=null?'is-invalid':''}|"
 								   id="verifycode" name="code" placeholder="请输入验证码!">
 							<div class="invalid-feedback" th:text="${codeMsg}">
 								验证码不正确!
@@ -103,8 +103,8 @@
 					<div class="form-group row mt-4">
 						<div class="col-sm-2"></div>
 						<div class="col-sm-10">
-							<input type="checkbox" id="remember-me" name="rememberMe"
-								   th:checked="${param.rememberMe}">
+							<input type="checkbox" id="remember-me" name="rememberme"
+								   th:checked="${param.rememberme}">
 							<label class="form-check-label" for="remember-me">记住我</label>
 							<a href="forget.html" class="text-danger float-right">忘记密码?</a>
 						</div>
@@ -191,8 +191,5 @@
 			$("#kaptcha").attr("src", path);
 		}
 	</script>
-
-
-
 </body>
 </html>

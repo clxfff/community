@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,8 +72,10 @@
 								<input type="file" th:class="|custom-file-input ${error!=null?'is-invalid':''}|"
 									   id="head-image" name="headerImage" lang="es" required="">
 								<label class="custom-file-label" for="head-image" data-browse="文件">选择一张图片</label>
-								<div class="invalid-feedback" th:text="${error}"></div>
-							</div>		
+								<div class="invalid-feedback" th:text="${error}">
+									该账号不存在!
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="form-group row mt-4">
@@ -85,13 +87,12 @@
 				</form>
 				<!-- 修改密码 -->
 				<h6 class="text-left text-info border-bottom pb-2 mt-5">修改密码</h6>
-				<form class="mt-5" method="post" enctype="multipart/form-data" th:action="@{/user/change}">
+				<form class="mt-5">				
 					<div class="form-group row mt-4">
 						<label for="old-password" class="col-sm-2 col-form-label text-right">原密码:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control"
-								   id="old-password" name="oldPassword" placeholder="请输入原始密码!" required>
-							<div class="invalid-feedback" th:text="${oldPasswordMsg}">
+							<input type="password" class="form-control" id="old-password" placeholder="请输入原始密码!" required>
+							<div class="invalid-feedback">
 								密码长度不能小于8位!
 							</div>							
 						</div>
@@ -99,9 +100,8 @@
 					<div class="form-group row mt-4">
 						<label for="new-password" class="col-sm-2 col-form-label text-right">新密码:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control"
-								   id="new-password" name="newPassword" placeholder="请输入新的密码!" required>
-							<div class="invalid-feedback" th:text="${newPasswordMsg}">
+							<input type="password" class="form-control" id="new-password" placeholder="请输入新的密码!" required>
+							<div class="invalid-feedback">
 								密码长度不能小于8位!
 							</div>							
 						</div>
@@ -109,9 +109,8 @@
 					<div class="form-group row mt-4">
 						<label for="confirm-password" class="col-sm-2 col-form-label text-right">确认密码:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control"
-								   id="confirm-password" name="newPasswordAgain" placeholder="再次输入新密码!" required>
-							<div class="invalid-feedback" th:text="${newPasswordMsgAgain}">
+							<input type="password" class="form-control" id="confirm-password" placeholder="再次输入新密码!" required>
+							<div class="invalid-feedback">
 								两次输入的密码不一致!
 							</div>								
 						</div>
